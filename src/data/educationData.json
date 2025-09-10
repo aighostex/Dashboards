@@ -1,0 +1,369 @@
+{
+  "metadata": {
+    "title": "Education Enrollment Data",
+    "description": "Public Pre-Primary and Primary Education Enrollment by LGA in Kaduna State",
+    "year": "2023",
+    "source": "Kaduna State Ministry of Education"
+  },
+  "data": [
+    {
+      "lga": "BIRNIN GWARI",
+      "prePrimary": {
+        "schools": 179,
+        "boys": 4892,
+        "girls": 4437,
+        "total": 9329
+      },
+      "primary": {
+        "schools": 179,
+        "boys": 73326,
+        "girls": 59070,
+        "total": 132396
+      }
+    },
+    {
+      "lga": "CHIKUN",
+      "prePrimary": {
+        "schools": 257,
+        "boys": 5830,
+        "girls": 6066,
+        "total": 11896
+      },
+      "primary": {
+        "schools": 257,
+        "boys": 38088,
+        "girls": 40409,
+        "total": 78497
+      }
+    },
+    {
+      "lga": "GIWA",
+      "prePrimary": {
+        "schools": 219,
+        "boys": 7035,
+        "girls": 7016,
+        "total": 14051
+      },
+      "primary": {
+        "schools": 219,
+        "boys": 55467,
+        "girls": 50773,
+        "total": 106240
+      }
+    },
+    {
+      "lga": "IGABI",
+      "prePrimary": {
+        "schools": 278,
+        "boys": 13917,
+        "girls": 14036,
+        "total": 27953
+      },
+      "primary": {
+        "schools": 278,
+        "boys": 107924,
+        "girls": 105089,
+        "total": 213013
+      }
+    },
+    {
+      "lga": "IKARA",
+      "prePrimary": {
+        "schools": 173,
+        "boys": 2907,
+        "girls": 2990,
+        "total": 5897
+      },
+      "primary": {
+        "schools": 173,
+        "boys": 37583,
+        "girls": 36285,
+        "total": 73868
+      }
+    },
+    {
+      "lga": "JABA",
+      "prePrimary": {
+        "schools": 100,
+        "boys": 5749,
+        "girls": 5779,
+        "total": 11528
+      },
+      "primary": {
+        "schools": 100,
+        "boys": 19018,
+        "girls": 19803,
+        "total": 38821
+      }
+    },
+    {
+      "lga": "JEMAA",
+      "prePrimary": {
+        "schools": 180,
+        "boys": 3597,
+        "girls": 3704,
+        "total": 7301
+      },
+      "primary": {
+        "schools": 180,
+        "boys": 17731,
+        "girls": 18157,
+        "total": 35888
+      }
+    },
+    {
+      "lga": "KACHIA",
+      "prePrimary": {
+        "schools": 261,
+        "boys": 2545,
+        "girls": 2393,
+        "total": 4938
+      },
+      "primary": {
+        "schools": 261,
+        "boys": 31172,
+        "girls": 30886,
+        "total": 62058
+      }
+    },
+    {
+      "lga": "KADUNA NORTH",
+      "prePrimary": {
+        "schools": 42,
+        "boys": 4466,
+        "girls": 4358,
+        "total": 8824
+      },
+      "primary": {
+        "schools": 42,
+        "boys": 16437,
+        "girls": 16296,
+        "total": 32733
+      }
+    },
+    {
+      "lga": "KADUNA SOUTH",
+      "prePrimary": {
+        "schools": 36,
+        "boys": 3707,
+        "girls": 3449,
+        "total": 7156
+      },
+      "primary": {
+        "schools": 36,
+        "boys": 14207,
+        "girls": 14251,
+        "total": 28458
+      }
+    },
+    {
+      "lga": "KAGARKO",
+      "prePrimary": {
+        "schools": 206,
+        "boys": 3174,
+        "girls": 3145,
+        "total": 6319
+      },
+      "primary": {
+        "schools": 206,
+        "boys": 24253,
+        "girls": 24537,
+        "total": 48790
+      }
+    },
+    {
+      "lga": "KAJURU",
+      "prePrimary": {
+        "schools": 163,
+        "boys": 3142,
+        "girls": 3225,
+        "total": 6367
+      },
+      "primary": {
+        "schools": 163,
+        "boys": 16836,
+        "girls": 16735,
+        "total": 33571
+      }
+    },
+    {
+      "lga": "KAURA",
+      "prePrimary": {
+        "schools": 105,
+        "boys": 6559,
+        "girls": 6766,
+        "total": 13325
+      },
+      "primary": {
+        "schools": 105,
+        "boys": 25733,
+        "girls": 28236,
+        "total": 53969
+      }
+    },
+    {
+      "lga": "KAURU",
+      "prePrimary": {
+        "schools": 281,
+        "boys": 1638,
+        "girls": 1535,
+        "total": 3173
+      },
+      "primary": {
+        "schools": 281,
+        "boys": 41935,
+        "girls": 40356,
+        "total": 82291
+      }
+    },
+    {
+      "lga": "KUBAU",
+      "prePrimary": {
+        "schools": 276,
+        "boys": 5965,
+        "girls": 5873,
+        "total": 11838
+      },
+      "primary": {
+        "schools": 276,
+        "boys": 53913,
+        "girls": 54553,
+        "total": 108466
+      }
+    },
+    {
+      "lga": "KUDAN",
+      "prePrimary": {
+        "schools": 89,
+        "boys": 5551,
+        "girls": 5748,
+        "total": 11299
+      },
+      "primary": {
+        "schools": 89,
+        "boys": 34945,
+        "girls": 32181,
+        "total": 67126
+      }
+    },
+    {
+      "lga": "LERE",
+      "prePrimary": {
+        "schools": 293,
+        "boys": 3326,
+        "girls": 3162,
+        "total": 6488
+      },
+      "primary": {
+        "schools": 293,
+        "boys": 53942,
+        "girls": 54837,
+        "total": 108779
+      }
+    },
+    {
+      "lga": "MAKARFI",
+      "prePrimary": {
+        "schools": 129,
+        "boys": 6197,
+        "girls": 5960,
+        "total": 12157
+      },
+      "primary": {
+        "schools": 129,
+        "boys": 41612,
+        "girls": 40492,
+        "total": 82104
+      }
+    },
+    {
+      "lga": "SABON GARI",
+      "prePrimary": {
+        "schools": 65,
+        "boys": 6385,
+        "girls": 6371,
+        "total": 12756
+      },
+      "primary": {
+        "schools": 65,
+        "boys": 27832,
+        "girls": 28848,
+        "total": 56680
+      }
+    },
+    {
+      "lga": "SANGA",
+      "prePrimary": {
+        "schools": 192,
+        "boys": 1864,
+        "girls": 1754,
+        "total": 3618
+      },
+      "primary": {
+        "schools": 192,
+        "boys": 17726,
+        "girls": 17775,
+        "total": 35501
+      }
+    },
+    {
+      "lga": "SOBA",
+      "prePrimary": {
+        "schools": 239,
+        "boys": 5148,
+        "girls": 4619,
+        "total": 9767
+      },
+      "primary": {
+        "schools": 239,
+        "boys": 42361,
+        "girls": 37826,
+        "total": 80187
+      }
+    },
+    {
+      "lga": "ZANGON KATAF",
+      "prePrimary": {
+        "schools": 271,
+        "boys": 5445,
+        "girls": 5769,
+        "total": 11214
+      },
+      "primary": {
+        "schools": 271,
+        "boys": 39368,
+        "girls": 41462,
+        "total": 80830
+      }
+    },
+    {
+      "lga": "ZARIA",
+      "prePrimary": {
+        "schools": 116,
+        "boys": 7108,
+        "girls": 7444,
+        "total": 14552
+      },
+      "primary": {
+        "schools": 116,
+        "boys": 54946,
+        "girls": 55687,
+        "total": 110633
+      }
+    }
+  ],
+  "totals": {
+    "prePrimary": {
+      "schools": 4150,
+      "boys": 116147,
+      "girls": 115599,
+      "total": 231746
+    },
+    "primary": {
+      "schools": 4150,
+      "boys": 886355,
+      "girls": 864544,
+      "total": 1750899
+    }
+  }
+}

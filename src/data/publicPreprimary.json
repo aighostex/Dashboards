@@ -1,0 +1,582 @@
+{
+  "metadata": {
+    "title": "Enrolment in Public Pre-Primary Education by level and LGA",
+    "source": "Kaduna State Education Board",
+    "year": "2023",
+    "last_updated": "2023-12-31"
+  },
+  "data": [
+    {
+      "lga": "BIRNIN GWARI",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 1091,
+          "girls": 983,
+          "total": 2074
+        },
+        "nursery": {
+          "boys": 3801,
+          "girls": 3454,
+          "total": 7255
+        },
+        "nursery_3": {
+          "boys": 519,
+          "girls": 392,
+          "total": 911
+        },
+        "total": {
+          "boys": 4892,
+          "girls": 4437,
+          "total": 9329
+        }
+      }
+    },
+    {
+      "lga": "CHIKUN",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 1434,
+          "girls": 1428,
+          "total": 2862
+        },
+        "nursery": {
+          "boys": 4739,
+          "girls": 5083,
+          "total": 9822
+        },
+        "nursery_3": {
+          "boys": 231,
+          "girls": 222,
+          "total": 453
+        },
+        "total": {
+          "boys": 5830,
+          "girls": 6066,
+          "total": 11896
+        }
+      }
+    },
+    {
+      "lga": "GIWA",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 1340,
+          "girls": 1252,
+          "total": 2592
+        },
+        "nursery": {
+          "boys": 5944,
+          "girls": 6033,
+          "total": 11977
+        },
+        "nursery_3": {
+          "boys": 1124,
+          "girls": 1101,
+          "total": 2225
+        },
+        "total": {
+          "boys": 7035,
+          "girls": 14036,
+          "total": 27953
+        }
+      }
+    },
+    {
+      "lga": "IGABI",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 654,
+          "girls": 719,
+          "total": 1373
+        },
+        "nursery": {
+          "boys": 1816,
+          "girls": 2007,
+          "total": 3823
+        },
+        "nursery_3": {
+          "boys": 1194,
+          "girls": 1335,
+          "total": 2529
+        },
+        "total": {
+          "boys": 2907,
+          "girls": 2990,
+          "total": 5897
+        }
+      }
+    },
+    {
+      "lga": "IKARA",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 105,
+          "girls": 97,
+          "total": 202
+        },
+        "nursery": {
+          "boys": 4658,
+          "girls": 4796,
+          "total": 9454
+        },
+        "nursery_3": {
+          "boys": 187,
+          "girls": 160,
+          "total": 347
+        },
+        "total": {
+          "boys": 5749,
+          "girls": 5779,
+          "total": 11528
+        }
+      }
+    },
+    {
+      "lga": "JABA",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 579,
+          "girls": 660,
+          "total": 1239
+        },
+        "nursery": {
+          "boys": 2506,
+          "girls": 2721,
+          "total": 5227
+        },
+        "nursery_3": {
+          "boys": 387,
+          "girls": 442,
+          "total": 829
+        },
+        "total": {
+          "boys": 3597,
+          "girls": 3704,
+          "total": 7301
+        }
+      }
+    },
+    {
+      "lga": "JEMA'A",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 433,
+          "girls": 438,
+          "total": 871
+        },
+        "nursery": {
+          "boys": 1454,
+          "girls": 1410,
+          "total": 2864
+        },
+        "nursery_3": {
+          "boys": 352,
+          "girls": 373,
+          "total": 725
+        },
+        "total": {
+          "boys": 2545,
+          "girls": 2393,
+          "total": 4938
+        }
+      }
+    },
+    {
+      "lga": "KACHIA",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 0,
+          "girls": 0,
+          "total": 0
+        },
+        "nursery": {
+          "boys": 3375,
+          "girls": 3375,
+          "total": 6750
+        },
+        "nursery_3": {
+          "boys": 4,
+          "girls": 3,
+          "total": 7
+        },
+        "total": {
+          "boys": 4466,
+          "girls": 4358,
+          "total": 8824
+        }
+      }
+    },
+    {
+      "lga": "KADUNA NORTH",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 164,
+          "girls": 160,
+          "total": 324
+        },
+        "nursery": {
+          "boys": 2616,
+          "girls": 2466,
+          "total": 5082
+        },
+        "nursery_3": {
+          "boys": 0,
+          "girls": 0,
+          "total": 0
+        },
+        "total": {
+          "boys": 3707,
+          "girls": 3449,
+          "total": 7156
+        }
+      }
+    },
+    {
+      "lga": "KADUNA SOUTH",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 1093,
+          "girls": 1127,
+          "total": 2220
+        },
+        "nursery": {
+          "boys": 2083,
+          "girls": 2162,
+          "total": 4245
+        },
+        "nursery_3": {
+          "boys": 290,
+          "girls": 295,
+          "total": 585
+        },
+        "total": {
+          "boys": 3174,
+          "girls": 3145,
+          "total": 8319
+        }
+      }
+    },
+    {
+      "lga": "KAGARKO",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 844,
+          "girls": 880,
+          "total": 1724
+        },
+        "nursery": {
+          "boys": 2051,
+          "girls": 2242,
+          "total": 4293
+        },
+        "nursery_3": {
+          "boys": 494,
+          "girls": 555,
+          "total": 1049
+        },
+        "total": {
+          "boys": 3142,
+          "girls": 3225,
+          "total": 6367
+        }
+      }
+    },
+    {
+      "lga": "KAJURU",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 101,
+          "girls": 102,
+          "total": 203
+        },
+        "nursery": {
+          "boys": 5468,
+          "girls": 5783,
+          "total": 11251
+        },
+        "nursery_3": {
+          "boys": 102,
+          "girls": 90,
+          "total": 192
+        },
+        "total": {
+          "boys": 6559,
+          "girls": 6766,
+          "total": 13325
+        }
+      }
+    },
+    {
+      "lga": "KAURU",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 873,
+          "girls": 916,
+          "total": 1789
+        },
+        "nursery": {
+          "boys": 547,
+          "girls": 552,
+          "total": 1099
+        },
+        "nursery_3": {
+          "boys": 453,
+          "girls": 457,
+          "total": 910
+        },
+        "total": {
+          "boys": 1638,
+          "girls": 1535,
+          "total": 3173
+        }
+      }
+    },
+    {
+      "lga": "KUBAU",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 2012,
+          "girls": 1835,
+          "total": 3847
+        },
+        "nursery": {
+          "boys": 4874,
+          "girls": 4890,
+          "total": 9764
+        },
+        "nursery_3": {
+          "boys": 2164,
+          "girls": 2109,
+          "total": 4273
+        },
+        "total": {
+          "boys": 5965,
+          "girls": 5673,
+          "total": 11838
+        }
+      }
+    },
+    {
+      "lga": "KUDAN",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 1187,
+          "girls": 1193,
+          "total": 2380
+        },
+        "nursery": {
+          "boys": 4460,
+          "girls": 4765,
+          "total": 9225
+        },
+        "nursery_3": {
+          "boys": 449,
+          "girls": 454,
+          "total": 903
+        },
+        "total": {
+          "boys": 5551,
+          "girls": 5748,
+          "total": 11299
+        }
+      }
+    },
+    {
+      "lga": "LERE",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 557,
+          "girls": 576,
+          "total": 1133
+        },
+        "nursery": {
+          "boys": 2235,
+          "girls": 2179,
+          "total": 4414
+        },
+        "nursery_3": {
+          "boys": 1454,
+          "girls": 1264,
+          "total": 2718
+        },
+        "total": {
+          "boys": 3326,
+          "girls": 3162,
+          "total": 6488
+        }
+      }
+    },
+    {
+      "lga": "MAKARFI",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 1281,
+          "girls": 1292,
+          "total": 2573
+        },
+        "nursery": {
+          "boys": 5106,
+          "girls": 4977,
+          "total": 10083
+        },
+        "nursery_3": {
+          "boys": 4429,
+          "girls": 4412,
+          "total": 8841
+        },
+        "total": {
+          "boys": 6197,
+          "girls": 5960,
+          "total": 12157
+        }
+      }
+    },
+    {
+      "lga": "SABON GARI",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 0,
+          "girls": 0,
+          "total": 0
+        },
+        "nursery": {
+          "boys": 5294,
+          "girls": 5388,
+          "total": 10682
+        },
+        "nursery_3": {
+          "boys": 408,
+          "girls": 469,
+          "total": 877
+        },
+        "total": {
+          "boys": 8385,
+          "girls": 6371,
+          "total": 12756
+        }
+      }
+    },
+    {
+      "lga": "SANGA",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 616,
+          "girls": 637,
+          "total": 1253
+        },
+        "nursery": {
+          "boys": 773,
+          "girls": 771,
+          "total": 1544
+        },
+        "nursery_3": {
+          "boys": 274,
+          "girls": 294,
+          "total": 568
+        },
+        "total": {
+          "boys": 1864,
+          "girls": 1754,
+          "total": 3618
+        }
+      }
+    },
+    {
+      "lga": "SOBA",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 222,
+          "girls": 235,
+          "total": 457
+        },
+        "nursery": {
+          "boys": 4057,
+          "girls": 3636,
+          "total": 7693
+        },
+        "nursery_3": {
+          "boys": 549,
+          "girls": 533,
+          "total": 1082
+        },
+        "total": {
+          "boys": 5148,
+          "girls": 4619,
+          "total": 9767
+        }
+      }
+    },
+    {
+      "lga": "ZANGON KATAF",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 1931,
+          "girls": 2023,
+          "total": 3954
+        },
+        "nursery": {
+          "boys": 4354,
+          "girls": 4786,
+          "total": 9140
+        },
+        "nursery_3": {
+          "boys": 1722,
+          "girls": 1966,
+          "total": 3688
+        },
+        "total": {
+          "boys": 5445,
+          "girls": 5769,
+          "total": 11214
+        }
+      }
+    },
+    {
+      "lga": "ZARIA",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 81,
+          "girls": 58,
+          "total": 139
+        },
+        "nursery": {
+          "boys": 6017,
+          "girls": 6461,
+          "total": 12478
+        },
+        "nursery_3": {
+          "boys": 57,
+          "girls": 68,
+          "total": 125
+        },
+        "total": {
+          "boys": 7108,
+          "girls": 7444,
+          "total": 14552
+        }
+      }
+    }
+  ],
+  "totals": {
+    "kindergarten_eccd": {
+      "boys": 16617,
+      "girls": 16626,
+      "total": 33243
+    },
+    "nursery": {
+      "boys": 91054,
+      "girls": 92990,
+      "total": 184044
+    },
+    "nursery_3": {
+      "boys": 17233,
+      "girls": 17371,
+      "total": 34604
+    },
+    "total": {
+      "boys": 116147,
+      "girls": 115599,
+      "total": 231746
+    }
+  }
+}
