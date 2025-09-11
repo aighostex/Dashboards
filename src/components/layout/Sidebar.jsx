@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { navigationItems } from '../../utils/constants';
+import kdgov from '../../assets/kdgov.svg'
 
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
@@ -16,15 +17,16 @@ const Sidebar = ({ isOpen, onClose }) => {
       
       {/* Sidebar */}
       <div className={`
-        fixed inset-y-0 left-0 z-30 w-64 bg-white transform transition-transform duration-300 ease-in-out
+        fixed inset-y-0 left-0 z-30 w-64 bg-gradient-to-b from-[#0ca16b] via-[#128370] to-[#1c5479]  transform transition-transform duration-300 ease-in-out
         lg:static lg:translate-x-0 lg:z-auto
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
-        <div className="flex items-center justify-between h-16 px-4 bg-white border-b ">
-          <h1 className="text-gray-800 font-cabin font-semibold text-xl">Kaduna Dashboards</h1>
+        {/* Header */}
+        <div className="flex fixed w-64 items-center justify-between h-[94px]  px-4 bg-white border-b z-40">
+          <h1 className="text-gray-800 font-cabin flex items-center gap-2 font-semibold text-xl"><img src={kdgov} alt="" srcset="" className='w-8 h-8' />Kaduna State Govt</h1>
           <button 
             onClick={onClose}
-            className="text-gray-800 hover:text-white lg:hidden"
+            className="text-gray-800 hover:text-red-900 lg:hidden"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -32,36 +34,40 @@ const Sidebar = ({ isOpen, onClose }) => {
           </button>
         </div>
         
-        <nav className="mt-8">
-          <div className="px-4 space-y-2">
-            {navigationItems.map((item) => {
-              const isActive = location.pathname === item.path;
-              return (
-                <NavLink
-                  key={item.path}
-                  to={item.path}
-                  className={`
-                    flex items-center px-4 py-3 rounded-lg transition-colors duration-200
-                    hover:bg-gray-800 hover:text-white
-                    ${isActive ? 'bg-sidebar text-white' : 'text-gray-700'}
-                  `}
-                  onClick={onClose}
-                >
-                  <span className="mr-3">{<item.icon spin='true' />}</span>
-                  <span className="font-medium">{item.name}</span>
-                  {isActive && (
-                    <span className="ml-auto w-2 h-2 bg-dot rounded-full"></span>
-                  )}
-                </NavLink>
-              );
-            })}
-          </div>
-        </nav>
-        
-        <div className="absolute bottom-0 w-full p-4 border-t border-gray-500">
-          <div className="flex items-center">
-            <div className="ml-3">
-              <p className="text-sm font-medium text-gray-500">Kaduna State</p>
+        {/* Scrollable content */}
+        <div className="flex flex-col h-full pt-24">
+          <nav className="flex-1 overflow-y-auto no-scrollbar">
+            <div className="px-4 py-4 space-y-2">
+              {navigationItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    className={`
+                      flex items-center px-4 py-3 rounded-lg transition-colors duration-200
+                      hover:bg-gray-800 hover:text-white
+                      ${isActive ? 'bg-sidebar text-white' : 'text-gray-700'}
+                    `}
+                    onClick={onClose}
+                  >
+                    <span className="mr-3">{<item.icon />}</span>
+                    <span className="font-medium">{item.name}</span>
+                    {isActive && (
+                      <span className="ml-auto w-2 h-2 bg-dot rounded-full"></span>
+                    )}
+                  </NavLink>
+                );
+              })}
+            </div>
+          </nav>
+          
+          {/* Footer */}
+          <div className="p-4 border-t border-gray-300">
+            <div className="flex items-center">
+              <div className="ml-3">
+                <p className="text-sm font-medium text-gray-500">Kaduna State</p>
+              </div>
             </div>
           </div>
         </div>

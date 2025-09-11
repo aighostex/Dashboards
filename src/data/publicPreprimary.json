@@ -76,13 +76,38 @@
         },
         "total": {
           "boys": 7035,
+          "girls": 7016,
+          "total": 14051
+        }
+      }
+    },
+    {
+      "lga": "IGABI",
+      "prePrimary": {
+        "kindergarten_eccd": {
+          "boys": 19,
+          "girls": 15,
+          "total": 34
+        },
+        "nursery": {
+          "boys": 12826,
+          "girls": 13053,
+          "total": 25879
+        },
+        "nursery_3": {
+          "boys": 390,
+          "girls": 377,
+          "total": 767
+        },
+        "total": {
+          "boys": 13917,
           "girls": 14036,
           "total": 27953
         }
       }
     },
     {
-      "lga": "IGABI",
+      "lga": "IKARA",
       "prePrimary": {
         "kindergarten_eccd": {
           "boys": 654,
@@ -107,7 +132,7 @@
       }
     },
     {
-      "lga": "IKARA",
+      "lga": "JABA",
       "prePrimary": {
         "kindergarten_eccd": {
           "boys": 105,
@@ -132,7 +157,7 @@
       }
     },
     {
-      "lga": "JABA",
+      "lga": "JEMA'A",
       "prePrimary": {
         "kindergarten_eccd": {
           "boys": 579,
@@ -157,7 +182,7 @@
       }
     },
     {
-      "lga": "JEMA'A",
+      "lga": "KACHIA",
       "prePrimary": {
         "kindergarten_eccd": {
           "boys": 433,
@@ -182,7 +207,7 @@
       }
     },
     {
-      "lga": "KACHIA",
+      "lga": "KADUNA NORTH",
       "prePrimary": {
         "kindergarten_eccd": {
           "boys": 0,
@@ -207,7 +232,7 @@
       }
     },
     {
-      "lga": "KADUNA NORTH",
+      "lga": "KADUNA SOUTH",
       "prePrimary": {
         "kindergarten_eccd": {
           "boys": 164,
@@ -232,7 +257,7 @@
       }
     },
     {
-      "lga": "KADUNA SOUTH",
+      "lga": "KAGARKO",
       "prePrimary": {
         "kindergarten_eccd": {
           "boys": 1093,
@@ -257,7 +282,7 @@
       }
     },
     {
-      "lga": "KAGARKO",
+      "lga": "KAJURU",
       "prePrimary": {
         "kindergarten_eccd": {
           "boys": 844,
@@ -282,7 +307,7 @@
       }
     },
     {
-      "lga": "KAJURU",
+      "lga": "KAURA",
       "prePrimary": {
         "kindergarten_eccd": {
           "boys": 101,
