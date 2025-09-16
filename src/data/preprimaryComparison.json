@@ -1,0 +1,429 @@
+{
+  "metadata": {
+    "title": "Public and Private Pre-Primary School Enrolment by LGA",
+    "source": "Table 3.4",
+    "year": "2023",
+    "description": "Comparative data showing public and private pre-primary school enrolment across LGAs in Kaduna State"
+  },
+  "data": [
+    {
+      "lga": "BIRNIN GWARI",
+      "public": {
+        "schools": 179,
+        "pupils": 9329,
+        "girls": 4437,
+        "boys": 4892,
+        "percent_girls": 46
+      },
+      "private": {
+        "schools": 16,
+        "pupils": 1949,
+        "girls": 974,
+        "boys": 975,
+        "percent_girls": 50
+      }
+    },
+    {
+      "lga": "CHIKUN",
+      "public": {
+        "schools": 257,
+        "pupils": 11886,
+        "girls": 6066,
+        "boys": 5820,
+        "percent_girls": 51
+      },
+      "private": {
+        "schools": 338,
+        "pupils": 15099,
+        "girls": 7620,
+        "boys": 7479,
+        "percent_girls": 50
+      }
+    },
+    {
+      "lga": "GIMA",
+      "public": {
+        "schools": 219,
+        "pupils": 14051,
+        "girls": 7016,
+        "boys": 7035,
+        "percent_girls": 50
+      },
+      "private": {
+        "schools": 25,
+        "pupils": 2347,
+        "girls": 1130,
+        "boys": 1217,
+        "percent_girls": 48
+      }
+    },
+    {
+      "lga": "IGABI",
+      "public": {
+        "schools": 278,
+        "pupils": 27953,
+        "girls": 14036,
+        "boys": 13917,
+        "percent_girls": 50
+      },
+      "private": {
+        "schools": 175,
+        "pupils": 10083,
+        "girls": 5087,
+        "boys": 4996,
+        "percent_girls": 50
+      }
+    },
+    {
+      "lga": "IKARA",
+      "public": {
+        "schools": 173,
+        "pupils": 5897,
+        "girls": 2890,
+        "boys": 3007,
+        "percent_girls": 51
+      },
+      "private": {
+        "schools": 28,
+        "pupils": 2387,
+        "girls": 1089,
+        "boys": 1298,
+        "percent_girls": 45
+      }
+    },
+    {
+      "lga": "JABA",
+      "public": {
+        "schools": 100,
+        "pupils": 11528,
+        "girls": 5779,
+        "boys": 5749,
+        "percent_girls": 50
+      },
+      "private": {
+        "schools": 33,
+        "pupils": 1618,
+        "girls": 883,
+        "boys": 735,
+        "percent_girls": 49
+      }
+    },
+    {
+      "lga": "JEIMA",
+      "public": {
+        "schools": 180,
+        "pupils": 7301,
+        "girls": 3704,
+        "boys": 3597,
+        "percent_girls": 51
+      },
+      "private": {
+        "schools": 68,
+        "pupils": 4519,
+        "girls": 2283,
+        "boys": 2236,
+        "percent_girls": 51
+      }
+    },
+    {
+      "lga": "KACHIA",
+      "public": {
+        "schools": 261,
+        "pupils": 4938,
+        "girls": 2393,
+        "boys": 2545,
+        "percent_girls": 48
+      },
+      "private": {
+        "schools": 38,
+        "pupils": 3429,
+        "girls": 1651,
+        "boys": 1778,
+        "percent_girls": 48
+      }
+    },
+    {
+      "lga": "KADUNA NORTH",
+      "public": {
+        "schools": 42,
+        "pupils": 8824,
+        "girls": 4358,
+        "boys": 4466,
+        "percent_girls": 49
+      },
+      "private": {
+        "schools": 254,
+        "pupils": 11730,
+        "girls": 5894,
+        "boys": 5836,
+        "percent_girls": 51
+      }
+    },
+    {
+      "lga": "KADUNA SOUTH",
+      "public": {
+        "schools": 36,
+        "pupils": 7166,
+        "girls": 3449,
+        "boys": 3717,
+        "percent_girls": 48
+      },
+      "private": {
+        "schools": 210,
+        "pupils": 10536,
+        "girls": 5304,
+        "boys": 5232,
+        "percent_girls": 50
+      }
+    },
+    {
+      "lga": "KAGARKO",
+      "public": {
+        "schools": 206,
+        "pupils": 6319,
+        "girls": 3145,
+        "boys": 3174,
+        "percent_girls": 50
+      },
+      "private": {
+        "schools": 50,
+        "pupils": 4067,
+        "girls": 2060,
+        "boys": 2007,
+        "percent_girls": 51
+      }
+    },
+    {
+      "lga": "KAJURU",
+      "public": {
+        "schools": 163,
+        "pupils": 6367,
+        "girls": 3225,
+        "boys": 3142,
+        "percent_girls": 51
+      },
+      "private": {
+        "schools": 35,
+        "pupils": 2195,
+        "girls": 1084,
+        "boys": 1111,
+        "percent_girls": 49
+      }
+    },
+    {
+      "lga": "KAURA",
+      "public": {
+        "schools": 105,
+        "pupils": 13325,
+        "girls": 6766,
+        "boys": 6559,
+        "percent_girls": 51
+      },
+      "private": {
+        "schools": 24,
+        "pupils": 1681,
+        "girls": 848,
+        "boys": 833,
+        "percent_girls": 50
+      }
+    },
+    {
+      "lga": "KAURU",
+      "public": {
+        "schools": 281,
+        "pupils": 3173,
+        "girls": 1535,
+        "boys": 1638,
+        "percent_girls": 48
+      },
+      "private": {
+        "schools": 25,
+        "pupils": 2251,
+        "girls": 1059,
+        "boys": 1192,
+        "percent_girls": 47
+      }
+    },
+    {
+      "lga": "KUBAU",
+      "public": {
+        "schools": 276,
+        "pupils": 11838,
+        "girls": 5673,
+        "boys": 6165,
+        "percent_girls": 50
+      },
+      "private": {
+        "schools": 38,
+        "pupils": 2990,
+        "girls": 1465,
+        "boys": 1525,
+        "percent_girls": 49
+      }
+    },
+    {
+      "lga": "KUDAN",
+      "public": {
+        "schools": 89,
+        "pupils": 11289,
+        "girls": 5748,
+        "boys": 5541,
+        "percent_girls": 51
+      },
+      "private": {
+        "schools": 12,
+        "pupils": 1548,
+        "girls": 787,
+        "boys": 761,
+        "percent_girls": 51
+      }
+    },
+    {
+      "lga": "LERE",
+      "public": {
+        "schools": 293,
+        "pupils": 6488,
+        "girls": 3146,
+        "boys": 3342,
+        "percent_girls": 49
+      },
+      "private": {
+        "schools": 20,
+        "pupils": 2816,
+        "girls": 1386,
+        "boys": 1430,
+        "percent_girls": 49
+      }
+    },
+    {
+      "lga": "MAKARFI",
+      "public": {
+        "schools": 129,
+        "pupils": 12157,
+        "girls": 5960,
+        "boys": 6197,
+        "percent_girls": 49
+      },
+      "private": {
+        "schools": 10,
+        "pupils": 809,
+        "girls": 404,
+        "boys": 405,
+        "percent_girls": 50
+      }
+    },
+    {
+      "lga": "SABON GARI",
+      "public": {
+        "schools": 65,
+        "pupils": 12756,
+        "girls": 6371,
+        "boys": 6385,
+        "percent_girls": 50
+      },
+      "private": {
+        "schools": 214,
+        "pupils": 16907,
+        "girls": 8306,
+        "boys": 8601,
+        "percent_girls": 49
+      }
+    },
+    {
+      "lga": "SANGA",
+      "public": {
+        "schools": 192,
+        "pupils": 3618,
+        "girls": 1754,
+        "boys": 1864,
+        "percent_girls": 48
+      },
+      "private": {
+        "schools": 35,
+        "pupils": 3245,
+        "girls": 1591,
+        "boys": 1654,
+        "percent_girls": 49
+      }
+    },
+    {
+      "lga": "SOBA",
+      "public": {
+        "schools": 239,
+        "pupils": 9767,
+        "girls": 4619,
+        "boys": 5148,
+        "percent_girls": 47
+      },
+      "private": {
+        "schools": 23,
+        "pupils": 2723,
+        "girls": 1324,
+        "boys": 1399,
+        "percent_girls": 49
+      }
+    },
+    {
+      "lga": "ZANGON KATAF",
+      "public": {
+        "schools": 271,
+        "pupils": 11214,
+        "girls": 5789,
+        "boys": 5425,
+        "percent_girls": 51
+      },
+      "private": {
+        "schools": 69,
+        "pupils": 4491,
+        "girls": 2216,
+        "boys": 2275,
+        "percent_girls": 49
+      }
+    },
+    {
+      "lga": "ZARIA",
+      "public": {
+        "schools": 116,
+        "pupils": 14552,
+        "girls": 7444,
+        "boys": 7108,
+        "percent_girls": 51
+      },
+      "private": {
+        "schools": 67,
+        "pupils": 6869,
+        "girls": 3402,
+        "boys": 3467,
+        "percent_girls": 50
+      }
+    }
+  ],
+  "totals": {
+    "public": {
+      "schools": 4190,
+      "pupils": 231746,
+      "girls": 115599,
+      "boys": 116147,
+      "percent_girls": 50
+    },
+    "private": {
+      "schools": 1807,
+      "pupils": 116489,
+      "girls": 57917,
+      "boys": 58572,
+      "percent_girls": 50
+    },
+    "combined": {
+      "schools": 5997,
+      "pupils": 348235,
+      "girls": 173516,
+      "boys": 174719,
+      "percent_girls": 50,
+      "private_contribution_percentage": 33
+    }
+  },
+  "summary": {
+    "private_contribution_percentage": 33,
+    "description": "Private enrolments in pre-primary education contribute approximately 33% of the overall enrolments in pre-primary education in the State."
+  }
+}

@@ -27,16 +27,39 @@ export const getChartColors = (dataType = 'education') => {
   return CHART_COLORS[dataType] || CHART_COLORS.primary;
 };
 
+
 export const getChartConfig = (chartType, dataType = 'education') => {
-  const colors = getChartColors(dataType);
-  
-  if (chartType === 'bar') {
-    return { ...BAR_CHART_CONFIG, colors };
-  }
-  
-  if (chartType === 'pie') {
-    return { ...PIE_CHART_CONFIG, colors };
-  }
-  
-  return { colors };
+  const baseConfig = {
+    margin: { top: 20, right: 30, left: 20, bottom: 60 },
+    xAxis: { 
+      dataKey: 'lga', 
+      angle: -45, 
+      textAnchor: 'end',
+      height: 80,
+      interval: 0,
+      tick: { fontSize: 10 }
+    },
+    yAxis: { 
+      allowDecimals: false,
+      tick: { fontSize: 10 }
+    },
+    tooltip: {
+      formatter: (value, name) => {
+        const formattedValue = new Intl.NumberFormat().format(value);
+        return [`${formattedValue}`, name];
+      }
+    }
+  };
+
+  // Different color schemes for different data types
+  const colorSchemes = {
+    education: ['#8884d8', '#82ca9d', '#ffc658'],
+    prePrimary: ['#8884d8', '#82ca9d', '#ffc658', '#ff8042'],
+    comparison: ['#8884d8', '#82ca9d', '#0088FE', '#00C49F', '#FFBB28', '#FF8042']
+  };
+
+  return {
+    ...baseConfig,
+    colors: colorSchemes[dataType] || colorSchemes.education
+  };
 };

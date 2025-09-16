@@ -1,4 +1,5 @@
 import { CiSettings } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const Header = ({ title, subtitle, onMenuClick, className=''}) => {
   return (
@@ -33,7 +34,8 @@ const Header = ({ title, subtitle, onMenuClick, className=''}) => {
             className="p-2 text-gray-400 hover:text-gray-500 cursor-pointer"
             aria-label="Settings"
           >
-            <CiSettings className="w-6 h-6" />
+            <Link to='/'><CiSettings className="w-6 h-6" /></Link>
+            
           </button>
         </div>
       </div>

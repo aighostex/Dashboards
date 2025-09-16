@@ -25,7 +25,7 @@
 .active-dot {
   width: 8px;
   height: 8px;
-  background-color: #60a5fa;
+  background-color: #0ca16b;
   border-radius: 50%;
   animation: pulse 2s infinite;
 }

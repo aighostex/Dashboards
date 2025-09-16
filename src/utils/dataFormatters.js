@@ -1,6 +1,220 @@
+// export const formatNumber = (num) => {
+//   if (typeof num !== 'number') return '0';
+//   return num.toLocaleString();
+// };
+
+// // Calculate percentage
+// export const calculatePercentage = (part, whole) => {
+//   if (whole === 0) return 0;
+//   return ((part / whole) * 100).toFixed(1);
+// };
+
+// // Process data for charts
+// export const processChartData = (data, view) => {
+//   if (!data) return [];
+  
+//   if (view === 'overview') {
+//     return data.map(item => ({
+//       lga: item.lga,
+//       prePrimary: item.prePrimary?.total || 0,
+//       primary: item.primary?.total || 0
+//     }));
+//   } else if (view === 'prePrimary') {
+//     return data.map(item => ({
+//       lga: item.lga,
+//       boys: item.prePrimary?.boys || 0,
+//       girls: item.prePrimary?.girls || 0,
+//       total: item.prePrimary?.total || 0
+//     }));
+//   } else {
+//     return data.map(item => ({
+//       lga: item.lga,
+//       boys: item.primary?.boys || 0,
+//       girls: item.primary?.girls || 0,
+//       total: item.primary?.total || 0
+//     }));
+//   }
+// };
+
+// // Process data for gender pie chart
+// export const processGenderData = (data, view) => {
+//   if (!data) return [];
+  
+//   if (view === 'prePrimary') {
+//     const boys = data.reduce((sum, item) => sum + (item.prePrimary?.boys || 0), 0);
+//     const girls = data.reduce((sum, item) => sum + (item.prePrimary?.girls || 0), 0);
+    
+//     return [
+//       { name: 'Boys', value: boys },
+//       { name: 'Girls', value: girls }
+//     ];
+//   } else {
+//     const boys = data.reduce((sum, item) => sum + (item.primary?.boys || 0), 0);
+//     const girls = data.reduce((sum, item) => sum + (item.primary?.girls || 0), 0);
+    
+//     return [
+//       { name: 'Boys', value: boys },
+//       { name: 'Girls', value: girls }
+//     ];
+//   }
+// };
+
+// // Calculate summary statistics
+// export const calculateSummaryStats = (data, totals) => {
+//   if (!data || data.length === 0 || !totals) {
+//     return {
+//       prePrimarySchools: 0,
+//       primarySchools: 0,
+//       prePrimaryStudents: 0,
+//       primaryStudents: 0,
+//       genderRatio: 0
+//     };
+//   }
+  
+//   const prePrimarySchools = data.reduce((sum, item) => sum + (item.prePrimary?.schools || 0), 0);
+//   const primarySchools = data.reduce((sum, item) => sum + (item.primary?.schools || 0), 0);
+//   const prePrimaryStudents = data.reduce((sum, item) => sum + (item.prePrimary?.total || 0), 0);
+//   const primaryStudents = data.reduce((sum, item) => sum + (item.primary?.total || 0), 0);
+  
+//   return {
+//     prePrimarySchools,
+//     primarySchools,
+//     prePrimaryStudents,
+//     primaryStudents,
+//     genderRatio: totals.primary && totals.primary.total > 0 
+//       ? ((totals.primary.girls / totals.primary.total) * 100).toFixed(1)
+//       : 0
+//   };
+// };
+
+// // Format values based on type
+// export const formatValueByType = (value, formatType) => {
+//   if (value === undefined || value === null) return '-';
+  
+//   switch (formatType) {
+//     case 'number':
+//       return typeof value === 'number' ? formatNumber(value) : value;
+//     case 'percent':
+//       return `${value}%`;
+//     case 'currency':
+//       return `₦${formatNumber(value)}`;
+//     default:
+//       return value;
+//   }
+// };
+
+// export const processPrePrimaryChartData = (data, view) => {
+//   if (!data || data.length === 0) return [];
+  
+//   return data.map(item => {
+//     if (view === 'overview') {
+//       return {
+//         lga: item.lga,
+//         // For overview, include all levels as separate properties
+//         prePrimary: item.prePrimary?.total?.total || 0,
+//         kindergarten: item.prePrimary?.kindergarten_eccd?.total || 0,
+//         nursery: item.prePrimary?.nursery?.total || 0,
+//         nursery3: item.prePrimary?.nursery_3?.total || 0,
+//         // Also include the individual values for gender charts
+//         boys: item.prePrimary?.total?.boys || 0,
+//         girls: item.prePrimary?.total?.girls || 0
+//       };
+//     } else {
+//       const levelKey = view === 'kindergarten' ? 'kindergarten_eccd' : view;
+//       return {
+//         lga: item.lga,
+//         // For specific views, use the main dataKey expected by the chart
+//         prePrimary: item.prePrimary?.[levelKey]?.total || 0,
+//         // Also include gender data
+//         boys: item.prePrimary?.[levelKey]?.boys || 0,
+//         girls: item.prePrimary?.[levelKey]?.girls || 0
+//       };
+//     }
+//   }).sort((a, b) => b.prePrimary - a.prePrimary);
+// };
+
+// export const calculatePrePrimarySummaryStats = (data) => {
+//   if (!data || data.length === 0) {
+//     return {
+//       totalStudents: 0,
+//       kindergartenTotal: 0,
+//       nurseryTotal: 0,
+//       nursery3Total: 0,
+//       genderRatio: 0,
+//       kindergartenGenderRatio: 0,
+//       nurseryGenderRatio: 0,
+//       nursery3GenderRatio: 0
+//     };
+//   }
+
+//   const totalStudents = data.reduce((sum, item) => sum + (item.prePrimary?.total?.total || 0), 0);
+//   const kindergartenTotal = data.reduce((sum, item) => sum + (item.prePrimary?.kindergarten_eccd?.total || 0), 0);
+//   const nurseryTotal = data.reduce((sum, item) => sum + (item.prePrimary?.nursery?.total || 0), 0);
+//   const nursery3Total = data.reduce((sum, item) => sum + (item.prePrimary?.nursery_3?.total || 0), 0);
+  
+//   const totalGirls = data.reduce((sum, item) => sum + (item.prePrimary?.total?.girls || 0), 0);
+//   const kindergartenGirls = data.reduce((sum, item) => sum + (item.prePrimary?.kindergarten_eccd?.girls || 0), 0);
+//   const nurseryGirls = data.reduce((sum, item) => sum + (item.prePrimary?.nursery?.girls || 0), 0);
+//   const nursery3Girls = data.reduce((sum, item) => sum + (item.prePrimary?.nursery_3?.girls || 0), 0);
+
+//   return {
+//     totalStudents,
+//     kindergartenTotal,
+//     nurseryTotal,
+//     nursery3Total,
+//     genderRatio: totalStudents > 0 ? Math.round((totalGirls / totalStudents) * 100) : 0,
+//     kindergartenGenderRatio: kindergartenTotal > 0 ? Math.round((kindergartenGirls / kindergartenTotal) * 100) : 0,
+//     nurseryGenderRatio: nurseryTotal > 0 ? Math.round((nurseryGirls / nurseryTotal) * 100) : 0,
+//     nursery3GenderRatio: nursery3Total > 0 ? Math.round((nursery3Girls / nursery3Total) * 100) : 0
+//   };
+// };
+
+
+// export const processPrePrimaryGenderData = (data, view, totals) => {
+//   if (!data || data.length === 0) return [];
+  
+//   if (view === 'overview') {
+//     // For overview, use the filtered data to show level distribution
+//     const kindergarten = data.reduce((sum, item) => sum + (item.prePrimary?.kindergarten_eccd?.total || 0), 0);
+//     const nursery = data.reduce((sum, item) => sum + (item.prePrimary?.nursery?.total || 0), 0);
+//     const nursery3 = data.reduce((sum, item) => sum + (item.prePrimary?.nursery_3?.total || 0), 0);
+    
+//     return [
+//       { name: 'Kindergarten/ECCD', value: kindergarten },
+//       { name: 'Nursery', value: nursery },
+//       { name: 'Nursery 3', value: nursery3 }
+//     ];
+//   } else {
+//     // For specific views, show gender distribution using totals
+//     const levelKey = view === 'kindergarten' ? 'kindergarten_eccd' : view;
+//     return [
+//       { name: 'Boys', value: totals?.[levelKey]?.boys || 0 },
+//       { name: 'Girls', value: totals?.[levelKey]?.girls || 0 }
+//     ];
+//   }
+// };
+
+
+// export const processPrePrimaryLevelData = (totals) => {
+//   if (!totals) return [];
+  
+//   return [
+//     { name: 'Kindergarten/ECCD', value: totals.kindergarten_eccd?.total || 0 },
+//     { name: 'Nursery', value: totals.nursery?.total || 0 },
+//     { name: 'Nursery 3', value: totals.nursery_3?.total || 0 }
+//   ];
+// };
+
+
 export const formatNumber = (num) => {
   if (typeof num !== 'number') return '0';
   return num.toLocaleString();
+};
+
+// Format percentage
+export const formatPercentage = (num) => {
+  if (num === undefined || num === null) return '0%';
+  return `${Math.round(num * 10) / 10}%`;
 };
 
 // Calculate percentage
@@ -94,38 +308,14 @@ export const formatValueByType = (value, formatType) => {
   switch (formatType) {
     case 'number':
       return typeof value === 'number' ? formatNumber(value) : value;
-    case 'percent':
-      return `${value}%`;
+    case 'percentage':
+      return formatPercentage(value);
     case 'currency':
       return `₦${formatNumber(value)}`;
     default:
       return value;
   }
 };
-
-// Pre-Primary specific data formatters
-// export const processPrePrimaryChartData = (data, view) => {
-//   if (!data || data.length === 0) return [];
-  
-//   return data.map(item => {
-//     if (view === 'overview') {
-//       return {
-//         lga: item.lga,
-//         total: item.prePrimary?.total?.total || 0,
-//         boys: item.prePrimary?.total?.boys || 0,
-//         girls: item.prePrimary?.total?.girls || 0
-//       };
-//     } else {
-//       const levelKey = view === 'kindergarten' ? 'kindergarten_eccd' : view;
-//       return {
-//         lga: item.lga,
-//         total: item.prePrimary?.[levelKey]?.total || 0,
-//         boys: item.prePrimary?.[levelKey]?.boys || 0,
-//         girls: item.prePrimary?.[levelKey]?.girls || 0
-//       };
-//     }
-//   }).sort((a, b) => b.total - a.total);
-// };
 
 export const processPrePrimaryChartData = (data, view) => {
   if (!data || data.length === 0) return [];
@@ -193,23 +383,6 @@ export const calculatePrePrimarySummaryStats = (data) => {
   };
 };
 
-// Process pre-primary gender data for pie chart
-// export const processPrePrimaryGenderData = (data, view, totals) => {
-//   if (!data || data.length === 0) return [];
-  
-//   if (view === 'overview') {
-//     return [
-//       { name: 'Boys', value: totals?.total?.boys || 0 },
-//       { name: 'Girls', value: totals?.total?.girls || 0 }
-//     ];
-//   } else {
-//     const levelKey = view === 'kindergarten' ? 'kindergarten_eccd' : view;
-//     return [
-//       { name: 'Boys', value: totals?.[levelKey]?.boys || 0 },
-//       { name: 'Girls', value: totals?.[levelKey]?.girls || 0 }
-//     ];
-//   }
-// };
 export const processPrePrimaryGenderData = (data, view, totals) => {
   if (!data || data.length === 0) return [];
   
@@ -234,7 +407,6 @@ export const processPrePrimaryGenderData = (data, view, totals) => {
   }
 };
 
-
 export const processPrePrimaryLevelData = (totals) => {
   if (!totals) return [];
   
@@ -243,4 +415,142 @@ export const processPrePrimaryLevelData = (totals) => {
     { name: 'Nursery', value: totals.nursery?.total || 0 },
     { name: 'Nursery 3', value: totals.nursery_3?.total || 0 }
   ];
+};
+
+// COMPARISON DATA FORMATTERS
+export const calculateComparisonSummaryStats = (filteredData, totals) => {
+  if (!filteredData.length || !totals) {
+    return {
+      totalStudents: 0,
+      totalSchools: 0,
+      totalGirls: 0,
+      publicStudents: 0,
+      publicSchools: 0,
+      publicGirls: 0,
+      privateStudents: 0,
+      privateSchools: 0,
+      privateGirls: 0,
+      overallGenderRatio: 0,
+      publicGenderRatio: 0,
+      privateGenderRatio: 0
+    };
+  }
+
+  // Use provided totals if available, otherwise calculate from filtered data
+  const publicStudents = totals.public?.pupils || filteredData.reduce((sum, item) => sum + item.public.pupils, 0);
+  const privateStudents = totals.private?.pupils || filteredData.reduce((sum, item) => sum + item.private.pupils, 0);
+  const publicSchools = totals.public?.schools || filteredData.reduce((sum, item) => sum + item.public.schools, 0);
+  const privateSchools = totals.private?.schools || filteredData.reduce((sum, item) => sum + item.private.schools, 0);
+  const publicGirls = totals.public?.girls || filteredData.reduce((sum, item) => sum + item.public.girls, 0);
+  const privateGirls = totals.private?.girls || filteredData.reduce((sum, item) => sum + item.private.girls, 0);
+
+  const totalStudents = publicStudents + privateStudents;
+  const totalSchools = publicSchools + privateSchools;
+  const totalGirls = publicGirls + privateGirls;
+
+  const overallGenderRatio = totalStudents > 0 ? Math.round((totalGirls / totalStudents) * 100) : 0;
+  const publicGenderRatio = publicStudents > 0 ? Math.round((publicGirls / publicStudents) * 100) : 0;
+  const privateGenderRatio = privateStudents > 0 ? Math.round((privateGirls / privateStudents) * 100) : 0;
+
+  return {
+    totalStudents,
+    totalSchools,
+    totalGirls,
+    publicStudents,
+    publicSchools,
+    publicGirls,
+    privateStudents,
+    privateSchools,
+    privateGirls,
+    overallGenderRatio,
+    publicGenderRatio,
+    privateGenderRatio
+  };
+};
+
+export const processComparisonChartData = (filteredData, view) => {
+  if (!filteredData.length) return [];
+
+  switch (view) {
+    case 'public':
+      return filteredData.map(item => ({
+        lga: item.lga,
+        total: item.public.pupils,
+        boys: item.public.boys,
+        girls: item.public.girls
+      }));
+    
+    case 'private':
+      return filteredData.map(item => ({
+        lga: item.lga,
+        total: item.private.pupils,
+        boys: item.private.boys,
+        girls: item.private.girls
+      }));
+    
+    case 'comparison':
+      return filteredData.map(item => ({
+        lga: item.lga,
+        public: item.public.pupils,
+        private: item.private.pupils,
+        total: item.public.pupils + item.private.pupils
+      }));
+    
+    case 'overview':
+    default:
+      return filteredData.map(item => ({
+        lga: item.lga,
+        total: item.public.pupils + item.private.pupils,
+        public: item.public.pupils,
+        private: item.private.pupils
+      }));
+  }
+};
+
+export const processComparisonGenderData = (filteredData, view, totals) => {
+  if (view === 'overview' || view === 'comparison') {
+    // Overall gender distribution
+    const totalGirls = totals?.combined?.girls || filteredData.reduce((sum, item) => sum + item.public.girls + item.private.girls, 0);
+    const totalBoys = totals?.combined?.boys || filteredData.reduce((sum, item) => sum + item.public.boys + item.private.boys, 0);
+    
+    return [
+      { name: 'Girls', value: totalGirls },
+      { name: 'Boys', value: totalBoys }
+    ];
+  } else if (view === 'public') {
+    // Public schools gender distribution
+    const publicGirls = totals?.public?.girls || filteredData.reduce((sum, item) => sum + item.public.girls, 0);
+    const publicBoys = totals?.public?.boys || filteredData.reduce((sum, item) => sum + item.public.boys, 0);
+    
+    return [
+      { name: 'Girls', value: publicGirls },
+      { name: 'Boys', value: publicBoys }
+    ];
+  } else if (view === 'private') {
+    // Private schools gender distribution
+    const privateGirls = totals?.private?.girls || filteredData.reduce((sum, item) => sum + item.private.girls, 0);
+    const privateBoys = totals?.private?.boys || filteredData.reduce((sum, item) => sum + item.private.boys, 0);
+    
+    return [
+      { name: 'Girls', value: privateGirls },
+      { name: 'Boys', value: privateBoys }
+    ];
+  }
+  
+  return [];
+};
+
+export const processComparisonSectorData = (totals) => {
+  if (!totals) return [];
+  
+  return [
+    { name: 'Public Schools', value: totals.public?.pupils || 0 },
+    { name: 'Private Schools', value: totals.private?.pupils || 0 }
+  ];
+};
+
+// Calculate private share percentage for a specific LGA
+export const calculatePrivateShare = (publicPupils, privatePupils) => {
+  const total = publicPupils + privatePupils;
+  return total > 0 ? (privatePupils / total) * 100 : 0;
 };
