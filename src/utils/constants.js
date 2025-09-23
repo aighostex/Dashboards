@@ -1,4 +1,8 @@
 import { FaChildren, FaHospital } from "react-icons/fa6";
+import EnrolmentDashboard from '../pages/dashboards/prePrimary/EnrolmentDashboard'
+import PrePrimaryComparisonDashboard from '../pages/dashboards/prePrimary/PrePrimaryComparisonDashboard';
+import PrivatePrePrimaryDashboard from '../pages/dashboards/prePrimary/PrivatePrePrimaryDashboard';
+import PrePrimaryDashboard from '../pages/dashboards/prePrimary/PrePrimaryDashboard';
 
 export const navigationItems = [
     {
@@ -21,7 +25,53 @@ export const navigationItems = [
       path: '/preprimary/comparison',
       icon: FaHospital
     },
-
-
-    
   ];
+
+
+export const navLinks = [
+    { 
+      name: 'About', 
+      href: '#',
+      
+    },
+    { 
+      name: 'Platforms', 
+      href: '#',
+      dropdown: [
+        { id:'preprimary', name: 'Pre-Primary'},
+        { id:'primary', name: 'Primary Education'},
+        { id:'secondary', name: 'Secondary Education'},
+        
+      ]
+    },
+    { 
+      name: 'Services', 
+      href: '#',
+      
+    },
+  ];
+
+
+
+export const dashboardConfigs = {
+    preprimary: {
+      dashboards: [
+        { 
+          id: 'total', 
+          component: EnrolmentDashboard,
+        },
+        { 
+          id: 'public', 
+          component: PrePrimaryDashboard,
+        },
+        { 
+          id: 'private', 
+          component: PrivatePrePrimaryDashboard,
+        },
+        { 
+          id: 'comparison', 
+          component: PrePrimaryComparisonDashboard,
+        }
+      ]
+    }
+  };

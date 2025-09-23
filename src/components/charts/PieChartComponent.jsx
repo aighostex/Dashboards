@@ -12,7 +12,6 @@ const PieChartComponent = ({ data }) => (
           data={data}
           cx="50%"
           cy="50%"
-          // Donut effect
           innerRadius={75}   // hollow center
           outerRadius={100}  // wider slices
           labelLine={false}
@@ -28,8 +27,8 @@ const PieChartComponent = ({ data }) => (
             <Cell 
               key={`cell-${index}`} 
               fill={COLORS[index % COLORS.length]} 
-              stroke="white"       // optional border between slices
-              strokeWidth={2}
+              // stroke="white"       
+              // strokeWidth={2}
             />
           ))}
         </Pie>

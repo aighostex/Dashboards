@@ -1,104 +1,297 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import DashboardLayout from '../components/layout/DashboardLayout';
+import { useState, useEffect } from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import Navbar from '../components/layout/Navbar';
+import SummaryCard from '../components/cards/SummaryCard';
+import PieChartComponent from '../components/charts/PieChartComponent';
 
 const LandingPage = () => {
-  const educationLevels = [
-    {
-      id: 'preprimary',
-      title: 'Pre-Primary Education',
-      description: 'Early childhood education data and statistics',
-      color: 'blue',
-      icon: '🎓',
-      dashboards: [
-        { id: 'total', name: 'Total Enrollment', description: 'Overall pre-primary enrollment statistics' },
-        { id: 'public', name: 'Public Schools', description: 'Public pre-primary school data' },
-        { id: 'private', name: 'Private Schools', description: 'Private pre-primary school data' },
-        { id: 'comparison', name: 'Public vs Private', description: 'Comparison between public and private schools' }
-      ]
-    },
-    {
-      id: 'primary',
-      title: 'Primary Education',
-      description: 'Primary school education data and statistics',
-      color: 'green',
-      icon: '📚',
-      dashboards: [
-        { id: 'total', name: 'Total Enrollment', description: 'Overall primary enrollment statistics' },
-        { id: 'public', name: 'Public Schools', description: 'Public primary school data' },
-        { id: 'private', name: 'Private Schools', description: 'Private primary school data' },
-        { id: 'comparison', name: 'Public vs Private', description: 'Comparison between public and private schools' }
-      ]
-    },
-    {
-      id: 'secondary',
-      title: 'Secondary Education',
-      description: 'Secondary school education data and statistics',
-      color: 'purple',
-      icon: '🏫',
-      dashboards: [
-        { id: 'total', name: 'Total Enrollment', description: 'Overall secondary enrollment statistics' },
-        { id: 'public', name: 'Public Schools', description: 'Public secondary school data' },
-        { id: 'private', name: 'Private Schools', description: 'Private secondary school data' },
-        { id: 'comparison', name: 'Public vs Private', description: 'Comparison between public and private schools' }
-      ]
-    }
-  ];
+  const [activeTab, setActiveTab] = useState('overview');
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  const getColorClass = (color) => {
-    const colorMap = {
-      blue: 'bg-blue-100 border-blue-300 text-blue-800 hover:bg-blue-200',
-      green: 'bg-green-100 border-green-300 text-green-800 hover:bg-green-200',
-      purple: 'bg-purple-100 border-purple-300 text-purple-800 hover:bg-purple-200'
-    };
-    return colorMap[color] || colorMap.blue;
+  useEffect(() => {
+    // Trigger animations after component mounts
+    setIsLoaded(true);
+  }, []);
+
+  // Data extracted from the PDF
+  const summaryData = {
+    totalPublicSchools: 4150,
+    totalPrivateSchools: 1900,
+    totalEnrollment: 2193468,
+    totalTeachers: 38270,
+    urbanSchools: 353,
+    ruralSchools: 3797,
+    prePrimaryPrimary: 1858,
+    primaryOnly: 2292,
+    juniorSecondary: 428,
+    seniorSecondary: 368
   };
 
+  // Chart data for public vs private schools
+  const schoolTypeData = [
+    { name: 'Public Schools', value: 4150 },
+    { name: 'Private Schools', value: 1900 }
+  ];
+
+  // School level distribution
+  const schoolLevelData = [
+    { name: 'Pre-Primary & Primary', schools: 1858 },
+    { name: 'Primary Only', schools: 2292 },
+    { name: 'Junior Secondary', schools: 428 },
+    { name: 'Senior Secondary', schools: 368 }
+  ];
+
+  // Enrollment by level
+  const enrollmentData = [
+    { level: 'Pre-Primary & Primary', male: 886355, female: 864544, total: 1750899 },
+    { level: 'Junior Secondary', male: 114713, female: 115397, total: 230110 },
+    { level: 'Senior Secondary', male: 106354, female: 106105, total: 212459 }
+  ];
+
+  // Teacher distribution
+  const teacherData = [
+    { level: 'Pre-Primary & Primary', male: 10336, female: 14563, total: 24899 },
+    { level: 'Junior Secondary', male: 3334, female: 2538, total: 5872 },
+    { level: 'Senior Secondary', male: 4577, female: 2922, total: 7499 }
+  ];
+
+  // Your brand colors for charts
+  const BRAND_COLORS = ['#0ca16b', '#128370', '#1c5479', '#0d8b5a'];
+
   return (
-    <DashboardLayout
-      title="Education Data Dashboard"
-      subtitle="Explore education statistics across different levels in Kaduna State"
-    >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {educationLevels.map(level => (
-          <div
-            key={level.id}
-            className={`border-2 rounded-xl p-6 transition-all duration-200 hover:shadow-md ${getColorClass(level.color)}`}
-          >
-            <div className="flex items-start mb-4">
-              <span className="text-3xl mr-3">{level.icon}</span>
-              <div>
-                <h2 className="text-xl font-bold">{level.title}</h2>
-                <p className="text-sm opacity-80">{level.description}</p>
-              </div>
-            </div>
-            
-            <div className="mb-4">
-              <h3 className="font-semibold mb-2">Available Dashboards:</h3>
-              <ul className="space-y-1 text-sm">
-                {level.dashboards.map(dashboard => (
-                  <li key={dashboard.id} className="flex items-center">
-                    <span className="w-2 h-2 bg-current opacity-50 rounded-full mr-2"></span>
-                    {dashboard.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <Link
-              to={`/${level.id}/total`}
-              className={`inline-block mt-2 px-4 py-2 rounded-md font-medium ${
-                level.color === 'blue' ? 'bg-blue-600 hover:bg-blue-700' :
-                level.color === 'green' ? 'bg-green-600 hover:bg-green-700' :
-                'bg-purple-600 hover:bg-purple-700'
-              } text-white transition-colors`}
-            >
-              Explore {level.title}
-            </Link>
+    <div className="min-h-screen  bg-gradient-to-br from-gray-50 via-white to-gray-100">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section className="pt-30 lg:pt-56 pb-20 px-4 text-center">
+        <div className="max-w-6xl mx-auto">
+          <h1 className={`text-3xl lg:text-7xl font-bold text-transparent bg-gradient-to-r from-[#0ca16b] via-[#128370] to-[#1c5479] bg-clip-text mb-14 transition-all duration-1000 transform ${
+            isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            Kaduna State Annual School Census 2024/2025
+          </h1>
+          <p className={`text-sm lg:text-xl text-gray-700 mb-8 max-w-3xl mx-auto transition-all duration-1000 delay-200 transform ${
+            isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+          }`}>
+            Comprehensive overview of education statistics across public and private institutions in Kaduna State
+          </p>
+          
+          {/* Quick Stats */}
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 transition-all duration-1000 delay-300 transform ${
+            isLoaded ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+          }`}>
+            <SummaryCard 
+              title="Total Schools" 
+              value={summaryData.totalPublicSchools + summaryData.totalPrivateSchools} 
+              subtitle="Public & Private"
+            />
+            <SummaryCard 
+              title="Total Enrollment" 
+              value={summaryData.totalEnrollment} 
+              subtitle="Students across all levels"
+              color="#128370"
+            />
+            <SummaryCard 
+              title="Total Teachers" 
+              value={summaryData.totalTeachers} 
+              subtitle="Teaching staff"
+              color="#1c5479"
+            />
+            <SummaryCard 
+              title="Rural Schools" 
+              value={summaryData.ruralSchools} 
+              subtitle="Majority of institutions"
+              color="#0d8b5a"
+            />
           </div>
-        ))}
-      </div>
-    </DashboardLayout>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="bg-white/50 backdrop-blur-md py-16 border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Navigation Tabs */}
+          <div className={`flex space-x-4 mb-8 border-b border-gray-300 pb-4 transition-all duration-700 delay-500 transform ${
+            isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            {['overview', 'schools', 'enrollment', 'teachers'].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-2 rounded-lg font-medium transition-all ${
+                  activeTab === tab
+                    ? 'bg-[#0ca16b] text-white shadow-md'
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 border border-gray-300'
+                }`}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab Content with Staggered Animation */}
+          <div className={`transition-all duration-700 delay-700 transform ${
+            isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            {/* Overview Tab */}
+            {activeTab === 'overview' && (
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">School Distribution</h3>
+                  <PieChartComponent data={schoolTypeData} />
+                </div>
+                <div className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">School Levels</h3>
+                  <ResponsiveContainer width="100%" height={300}>
+                    <BarChart data={schoolLevelData}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                      <XAxis 
+                        dataKey="name" 
+                        stroke="#6b7280" 
+                        fontSize={12} 
+                        angle={-45} 
+                        textAnchor="end" 
+                        height={80} 
+                      />
+                      <YAxis stroke="#6b7280" />
+                      <Tooltip />
+                      <Bar dataKey="schools" fill={BRAND_COLORS[0]} radius={[4, 4, 0, 0]} />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            )}
+
+            {/* Schools Tab */}
+            {activeTab === 'schools' && (
+              <div className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">School Types</h3>
+                    <div className="space-y-4">
+                      <div className="flex justify-between text-gray-800 border-b border-gray-200 pb-2">
+                        <span>Regular Schools</span>
+                        <span className="font-semibold text-[#0ca16b]">3,894</span>
+                      </div>
+                      <div className="flex justify-between text-gray-800 border-b border-gray-200 pb-2">
+                        <span>Islamiyya Schools</span>
+                        <span className="font-semibold text-[#128370]">28</span>
+                      </div>
+                      <div className="flex justify-between text-gray-800">
+                        <span>Nomadic Schools</span>
+                        <span className="font-semibold text-[#1c5479]">228</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">Location Distribution</h3>
+                    <div className="space-y-4">
+                      <div className="flex justify-between text-gray-800 border-b border-gray-200 pb-2">
+                        <span>Urban Schools</span>
+                        <span className="font-semibold text-[#0ca16b]">{summaryData.urbanSchools.toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between text-gray-800 border-b border-gray-200 pb-2">
+                        <span>Rural Schools</span>
+                        <span className="font-semibold text-[#128370]">{summaryData.ruralSchools.toLocaleString()}</span>
+                      </div>
+                      <div className="text-gray-600 text-sm pt-2">
+                        {((summaryData.ruralSchools / summaryData.totalPublicSchools) * 100).toFixed(1)}% of schools are in rural areas
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">School Level Distribution</h3>
+                  <ResponsiveContainer width="100%" height={300}>
+                    <BarChart data={schoolLevelData}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                      <XAxis dataKey="name" stroke="#6b7280" fontSize={12} />
+                      <YAxis stroke="#6b7280" />
+                      <Tooltip />
+                      <Bar dataKey="schools" fill={BRAND_COLORS[0]} radius={[4, 4, 0, 0]} />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            )}
+
+            {/* Enrollment Tab */}
+            {activeTab === 'enrollment' && (
+              <div className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Student Enrollment by Level</h3>
+                <ResponsiveContainer width="100%" height={400}>
+                  <BarChart data={enrollmentData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                    <XAxis dataKey="level" stroke="#6b7280" />
+                    <YAxis stroke="#6b7280" />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="male" fill={BRAND_COLORS[0]} name="Male Students" radius={[4, 4, 0, 0]} />
+                    <Bar dataKey="female" fill={BRAND_COLORS[2]} name="Female Students" radius={[4, 4, 0, 0]} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            )}
+
+            {/* Teachers Tab */}
+            {activeTab === 'teachers' && (
+              <div className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-[1.02]">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Teacher Distribution by Level</h3>
+                <ResponsiveContainer width="100%" height={400}>
+                  <BarChart data={teacherData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                    <XAxis dataKey="level" stroke="#6b7280" />
+                    <YAxis stroke="#6b7280" />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="male" fill={BRAND_COLORS[0]} name="Male Teachers" radius={[4, 4, 0, 0]} />
+                    <Bar dataKey="female" fill={BRAND_COLORS[2]} name="Female Teachers" radius={[4, 4, 0, 0]} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Insights Section */}
+      <section className="py-16 px-4 bg-gray-50/50 border-t border-gray-200">
+        <div className="max-w-6xl mx-auto">
+          <h2 className={`text-3xl font-bold text-gray-900 text-center mb-12 transition-all duration-1000 delay-800 transform ${
+            isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            Key Insights
+          </h2>
+          <div className={`grid md:grid-cols-3 gap-8 transition-all duration-1000 delay-900 transform ${
+            isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            <div className="text-center bg-white/80 p-6 rounded-lg border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-105">
+              <div className="text-4xl font-bold text-[#0ca16b] mb-2">91.5%</div>
+              <div className="text-gray-700">Schools located in rural areas</div>
+            </div>
+            <div className="text-center bg-white/80 p-6 rounded-lg border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-105">
+              <div className="text-4xl font-bold text-[#128370] mb-2">1:57</div>
+              <div className="text-gray-700">Student to Teacher ratio</div>
+            </div>
+            <div className="text-center bg-white/80 p-6 rounded-lg border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-105">
+              <div className="text-4xl font-bold text-[#1c5479] mb-2">49.4%</div>
+              <div className="text-gray-700">Female students enrollment</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 py-8">
+        <div className={`max-w-6xl mx-auto px-4 text-center text-gray-600 transition-all duration-1000 delay-1000 transform ${
+          isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}>
+          <p className="text-lg font-semibold text-gray-900 mb-2">Kaduna State Bureau of Statistics</p>
+          <p>Annual School Census 2024/2025</p>
+          <p className="text-sm mt-2">Data sourced from comprehensive school census across 23 Local Government Areas</p>
+        </div>
+      </footer>
+    </div>
   );
 };
 

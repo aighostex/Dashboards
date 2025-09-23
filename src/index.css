@@ -9,6 +9,7 @@
 @theme {
   --color-sidebar: #006633;
   --color-dot: #0ca16b;
+  --color-nav: #6b6c6a;
   --font-cabin: 'Cabin','sans-serif'
 }
 /* Custom styles for sidebar and layout */

@@ -1,4 +1,4 @@
-const DashboardGrid = ({ children, cols = 4 }) => {
+const DashboardGrid = ({ children, cols = 4, className = '' }) => {
   const gridCols = {
     1: 'grid-cols-1',
     2: 'grid-cols-1 md:grid-cols-2',
@@ -7,7 +7,7 @@ const DashboardGrid = ({ children, cols = 4 }) => {
   };
 
   return (
-    <div className={`grid ${gridCols[cols]} gap-4 mb-6`}>
+    <div className={`grid ${gridCols[cols]} ${className} gap-4 mb-6`}>
       {children}
     </div>
   );
