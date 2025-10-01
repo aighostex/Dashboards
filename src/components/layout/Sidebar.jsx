@@ -1,29 +1,30 @@
-
-
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { GoSidebarCollapse, GoSidebarExpand } from 'react-icons/go';
 import kdgov from '../../assets/kdgov.svg';
 import { navigationItems } from '../../utils/constants';
 
+
+
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
   const [isLandingPage, setIsLandingPage] = useState(false);
 
-  // Check if we're on the landing page
+
+  // Check for landing page
   useEffect(() => {
     setIsLandingPage(location.pathname === '/');
   }, [location.pathname]);
 
-  // Close sidebar when route changes on mobile
+  // Sidebar closes on mobile
   useEffect(() => {
     if (isOpen) {
       onClose();
     }
   }, [location.pathname]);
 
-  // Don't render sidebar on landing page
+  // No sidebar for Landingpage
   if (isLandingPage) {
     return null;
   }
@@ -42,7 +43,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       <div
         className={`
           fixed inset-y-0 left-0 z-30 transform transition-transform duration-300 ease-in-out
-          bg-gradient-to-b from-[#0ca16b] via-[#128370] to-[#1c5479]
+          bg-gray-100 shadow-sm
           lg:static lg:translate-x-0 lg:z-auto
           ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
           ${collapsed ? 'w-16' : 'w-64'}
@@ -50,7 +51,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       >
         {/* Header */}
         <div
-          className={`flex items-center justify-between h-[94px] px-4 bg-white border-b z-40 transition-all duration-300
+          className={`flex items-center justify-between h-[93px] px-4 bg-white border-b border-gray-200 z-40 transition-all duration-300
             ${collapsed ? 'w-16 justify-center' : 'w-64'}
           `}
         >
@@ -84,7 +85,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           {/* Close button for mobile */}
           <button
             onClick={onClose}
-            className="text-gray-800 hover:text-red-900 lg:hidden"
+            className="text-gray-800 hover:text-red-900 cursor-pointer lg:hidden"
           >
             <svg
               className="w-6 h-6"
@@ -115,7 +116,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                     className={`
                       flex items-center px-3 py-3 rounded-lg transition-colors duration-200
                       hover:bg-gray-800 hover:text-white
-                      ${isActive ? 'bg-gray-700 text-white' : 'text-gray-100'}
+                      ${isActive ? 'bg-gray-700 text-white' : 'text-text'}
                     `}
                     onClick={onClose}
                   >

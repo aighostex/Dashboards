@@ -1,4 +1,4 @@
-import { CiSettings } from "react-icons/ci";
+import { CiHome } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
 const Header = ({ title, subtitle, onMenuClick, className=''}) => {
@@ -8,7 +8,7 @@ const Header = ({ title, subtitle, onMenuClick, className=''}) => {
         <div className="flex items-center">
           <button
             onClick={onMenuClick}
-            className="mr-4 text-gray-500 hover:text-gray-600 lg:hidden"
+            className="mr-4 text-gray-500 hover:text-gray-600 cursor-pointer lg:hidden"
             aria-label="Open menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -16,7 +16,7 @@ const Header = ({ title, subtitle, onMenuClick, className=''}) => {
             </svg>
           </button>
           <div>
-            <h1 className="text-3xl font-cabin font-bold text-transparent bg-gradient-to-r from-[#0ca16b] via-[#128370] to-[#1c5479] bg-clip-text">{title}</h1>
+            <h1 className="text-3xl font-cabin font-bold text-transparent bg-gradient-to-r from-dot via-primary to-secondary bg-clip-text">{title}</h1>
             {subtitle && <p className="text-sm text-gray-600 mt-1">{subtitle}</p>}
           </div>
         </div>
@@ -34,7 +34,7 @@ const Header = ({ title, subtitle, onMenuClick, className=''}) => {
             className="p-2 text-gray-400 hover:text-gray-500 cursor-pointer"
             aria-label="Settings"
           >
-            <Link to='/'><CiSettings className="w-6 h-6" /></Link>
+            <Link to='/'><CiHome className="w-6 h-6" /></Link>
             
           </button>
         </div>

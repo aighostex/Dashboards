@@ -22,7 +22,7 @@ const EnrolmentDashboard = () => {
   const [view, setView] = useState('overview');
   
   // Fetch data from API
-  const { data: apiData, isLoading, error } = useApiData(
+  const { data: apiData, isLoading, error, } = useApiData(
     () => educationApi.getAll()
   );
   

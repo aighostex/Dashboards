@@ -1,37 +1,28 @@
-import { FaChildren, FaHospital } from "react-icons/fa6";
-import EnrolmentDashboard from '../pages/dashboards/prePrimary/EnrolmentDashboard'
-import PrePrimaryComparisonDashboard from '../pages/dashboards/prePrimary/PrePrimaryComparisonDashboard';
-import PrivatePrePrimaryDashboard from '../pages/dashboards/prePrimary/PrivatePrePrimaryDashboard';
-import PrePrimaryDashboard from '../pages/dashboards/prePrimary/PrePrimaryDashboard';
+import { dashboardConfigs } from "./dashboardConfigs";
 
-export const navigationItems = [
-    {
-      name: 'Pre-Primary Enrolment',
-      path: '/preprimary/total',
-      icon: FaChildren
-    },
-    {
-      name: 'Public Pre-Primary',
-      path: '/preprimary/public',
-      icon: FaHospital
-    },
-    {
-      name: 'Private Pre-Primary',
-      path: '/preprimary/private',
-      icon: FaHospital
-    },
-    {
-      name: 'Pre-Primary Comparison',
-      path: '/preprimary/comparison',
-      icon: FaHospital
-    },
-  ];
+
+const sectionKey = location.pathname.split("/")[1];
+
+export const navigationItems =
+    dashboardConfigs[sectionKey]?.dashboards.map((dashboard) => ({
+      name: dashboard.name,
+      path: `/${sectionKey}/${dashboard.id}`,
+      icon: dashboard.icon,
+})) || [];
+
+
+
 
 
 export const navLinks = [
     { 
+      name: 'Home', 
+      href: '/',
+      
+    },
+    { 
       name: 'About', 
-      href: '#',
+      href: '/about',
       
     },
     { 
@@ -46,32 +37,10 @@ export const navLinks = [
     },
     { 
       name: 'Services', 
-      href: '#',
+      href: '/services',
       
     },
   ];
 
 
 
-export const dashboardConfigs = {
-    preprimary: {
-      dashboards: [
-        { 
-          id: 'total', 
-          component: EnrolmentDashboard,
-        },
-        { 
-          id: 'public', 
-          component: PrePrimaryDashboard,
-        },
-        { 
-          id: 'private', 
-          component: PrivatePrePrimaryDashboard,
-        },
-        { 
-          id: 'comparison', 
-          component: PrePrimaryComparisonDashboard,
-        }
-      ]
-    }
-  };

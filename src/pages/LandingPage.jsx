@@ -1,19 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, //useMemo 
+} from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import Navbar from '../components/layout/Navbar';
 import SummaryCard from '../components/cards/SummaryCard';
 import PieChartComponent from '../components/charts/PieChartComponent';
+// import { educationApi } from '../services/educationApi'
+// import useApiData from '../hooks/useApiData';
+// import useFilteredData from '../hooks/useFilteredData';
+// import { 
+//   calculateSummaryStats,
+//  } from '../utils/dataFormatters';
 
 const LandingPage = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Trigger animations after component mounts
     setIsLoaded(true);
   }, []);
 
-  // Data extracted from the PDF
+  // const { data: apiData, isLoading, error} = useApiData(
+  //   ()=>educationApi.getAll()
+  // );
+
+  //  const { data: rawData, totals } = useMemo(() => {
+  //     if (!apiData) return { data: [], totals: null };
+  //     return {
+  //       data: apiData.data || [],
+  //       totals: apiData.totals || null
+  //     };
+  //   }, [apiData]);
+
+  //    const { filteredData } = 
+  //     useFilteredData(rawData);
+
+  
+  //  const summaryStats = useMemo(() => 
+  //     calculateSummaryStats(filteredData, totals),
+  //     [filteredData, totals]
+  //   );
+
+  // Total Data 
   const summaryData = {
     totalPublicSchools: 4150,
     totalPrivateSchools: 1900,
@@ -65,7 +92,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="pt-30 lg:pt-56 pb-20 px-4 text-center">
         <div className="max-w-6xl mx-auto">
-          <h1 className={`text-3xl lg:text-7xl font-bold text-transparent bg-gradient-to-r from-[#0ca16b] via-[#128370] to-[#1c5479] bg-clip-text mb-14 transition-all duration-1000 transform ${
+          <h1 className={`text-3xl lg:text-7xl font-bold text-transparent bg-gradient-to-r from-dot via-primary to-secondary bg-clip-text mb-14 transition-all duration-1000 transform ${
             isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             Kaduna State Annual School Census 2024/2025
@@ -111,16 +138,16 @@ const LandingPage = () => {
       <section className="bg-white/50 backdrop-blur-md py-16 border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-4">
           {/* Navigation Tabs */}
-          <div className={`flex space-x-4 mb-8 border-b border-gray-300 pb-4 transition-all duration-700 delay-500 transform ${
+          <div className={`flex space-x-4 mb-8 overflow-scroll border-b border-gray-300 pb-4 transition-all duration-700 delay-500 transform ${
             isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             {['overview', 'schools', 'enrollment', 'teachers'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-2 rounded-lg font-medium transition-all ${
+                className={`px-6 py-2 rounded-lg font-medium cursor-pointer transition-all ${
                   activeTab === tab
-                    ? 'bg-[#0ca16b] text-white shadow-md'
+                    ? 'bg-dot text-white shadow-md'
                     : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900 border border-gray-300'
                 }`}
               >
@@ -171,15 +198,15 @@ const LandingPage = () => {
                     <div className="space-y-4">
                       <div className="flex justify-between text-gray-800 border-b border-gray-200 pb-2">
                         <span>Regular Schools</span>
-                        <span className="font-semibold text-[#0ca16b]">3,894</span>
+                        <span className="font-semibold text-dot">3,894</span>
                       </div>
                       <div className="flex justify-between text-gray-800 border-b border-gray-200 pb-2">
                         <span>Islamiyya Schools</span>
-                        <span className="font-semibold text-[#128370]">28</span>
+                        <span className="font-semibold text-primary">28</span>
                       </div>
                       <div className="flex justify-between text-gray-800">
                         <span>Nomadic Schools</span>
-                        <span className="font-semibold text-[#1c5479]">228</span>
+                        <span className="font-semibold text-secondary">228</span>
                       </div>
                     </div>
                   </div>
@@ -188,11 +215,11 @@ const LandingPage = () => {
                     <div className="space-y-4">
                       <div className="flex justify-between text-gray-800 border-b border-gray-200 pb-2">
                         <span>Urban Schools</span>
-                        <span className="font-semibold text-[#0ca16b]">{summaryData.urbanSchools.toLocaleString()}</span>
+                        <span className="font-semibold text-dot">{summaryData.urbanSchools.toLocaleString()}</span>
                       </div>
                       <div className="flex justify-between text-gray-800 border-b border-gray-200 pb-2">
                         <span>Rural Schools</span>
-                        <span className="font-semibold text-[#128370]">{summaryData.ruralSchools.toLocaleString()}</span>
+                        <span className="font-semibold text-primary">{summaryData.ruralSchools.toLocaleString()}</span>
                       </div>
                       <div className="text-gray-600 text-sm pt-2">
                         {((summaryData.ruralSchools / summaryData.totalPublicSchools) * 100).toFixed(1)}% of schools are in rural areas
@@ -266,15 +293,15 @@ const LandingPage = () => {
             isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <div className="text-center bg-white/80 p-6 rounded-lg border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-[#0ca16b] mb-2">91.5%</div>
+              <div className="text-4xl font-bold text-dot mb-2">91.5%</div>
               <div className="text-gray-700">Schools located in rural areas</div>
             </div>
             <div className="text-center bg-white/80 p-6 rounded-lg border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-[#128370] mb-2">1:57</div>
+              <div className="text-4xl font-bold text-primary mb-2">1:57</div>
               <div className="text-gray-700">Student to Teacher ratio</div>
             </div>
             <div className="text-center bg-white/80 p-6 rounded-lg border border-gray-200 shadow-sm transition-transform duration-500 hover:scale-105">
-              <div className="text-4xl font-bold text-[#1c5479] mb-2">49.4%</div>
+              <div className="text-4xl font-bold text-secondary mb-2">49.4%</div>
               <div className="text-gray-700">Female students enrollment</div>
             </div>
           </div>

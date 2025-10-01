@@ -7,72 +7,12 @@
 }
 
 @theme {
+  --color-primary:#128370 ;
+  --color-secondary:#1c5479 ;
+  --color-text: #232323;
+
   --color-sidebar: #006633;
   --color-dot: #0ca16b;
   --color-nav: #6b6c6a;
   --font-cabin: 'Cabin','sans-serif'
-}
-/* Custom styles for sidebar and layout */
-.sidebar-transition {
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Smooth transitions for main content */
-.main-content {
-  transition: margin-left 0.3s ease-in-out;
-}
-
-/* Active state indicator */
-.active-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #0ca16b;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.7);
-  }
-  
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(96, 165, 250, 0);
-  }
-  
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(96, 165, 250, 0);
-  }
-}
-
-/* Custom scrollbar for sidebar */
-.sidebar::-webkit-scrollbar {
-  width: 6px;
-}
-
-.sidebar::-webkit-scrollbar-track {
-  background: #1f2937;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background: #4b5563;
-  border-radius: 3px;
-}
-
-.sidebar::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
-}
-
-/* Improve focus styles for accessibility */
-.sidebar button:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-.nav-link:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: -2px;
 }

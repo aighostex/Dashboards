@@ -44,7 +44,7 @@ const DashboardLayout = ({
     );
   }
 
-  // Show error state
+  //error state
   if (error) {
     return (
       <div className="flex h-screen bg-gray-100">

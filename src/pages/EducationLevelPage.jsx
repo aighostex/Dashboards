@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { dashboardConfigs } from '../utils/constants';
+import { dashboardConfigs } from '../utils/dashboardConfigs';
 
 
 const EducationLevelPage = () => {
