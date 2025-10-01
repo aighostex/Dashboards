@@ -16,8 +16,8 @@ const Header = ({ title, subtitle, onMenuClick, className=''}) => {
             </svg>
           </button>
           <div>
-            <h1 className="text-3xl font-cabin font-bold text-transparent bg-gradient-to-r from-dot via-primary to-secondary bg-clip-text">{title}</h1>
-            {subtitle && <p className="text-sm text-gray-600 mt-1">{subtitle}</p>}
+            <h1 className="sm:text-3xl text-base font-cabin font-bold text-transparent bg-gradient-to-r from-dot via-primary to-secondary bg-clip-text">{title}</h1>
+            {subtitle && <p className="sm:text-sm text-[10px] text-gray-600 mt-1">{subtitle}</p>}
           </div>
         </div>
         
