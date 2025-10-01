@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { GoSidebarCollapse, GoSidebarExpand } from 'react-icons/go';
 import kdgov from '../../assets/kdgov.svg';
-import { navigationItems } from '../../utils/constants';
+
+import { dashboardConfigs } from '../../utils/dashboardConfigs';
 
 
 
@@ -10,6 +11,16 @@ const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
   const [isLandingPage, setIsLandingPage] = useState(false);
+
+
+  const sectionKey = location.pathname.split("/")[1];
+
+  const navigationItems =
+    dashboardConfigs[sectionKey]?.dashboards.map((dashboard) => ({
+      name: dashboard.name,
+      path: `/${sectionKey}/${dashboard.id}`,
+      icon: dashboard.icon,
+})) || [];
 
 
   // Check for landing page
