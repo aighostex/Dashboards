@@ -1,7 +1,7 @@
 const ViewToggle = ({ views, currentView, onChange,  }) => (
   <div className="bg-white rounded-xl shadow-sm p-4 flex-1">
     <span className="block text-sm font-medium text-gray-700 mb-1">View:</span>
-    <div className="flex space-x-2">
+    <div className="flex space-x-2 overflow-scroll">
       {views.map(view => (
         <button
           key={view.value}

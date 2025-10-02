@@ -140,7 +140,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-black/40 backdrop-blur-xl rounded-lg mt-2 py-2">
+          <div className="md:hidden bg-black/70 backdrop-blur-xl rounded-lg mt-2 py-2">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
                 <div key={link.name}>
@@ -149,7 +149,7 @@ const Navbar = () => {
                     <div>
                       <button
                         onClick={() => toggleDropdown(link.name)}
-                        className="flex items-center justify-between w-full text-dot px-3 py-2 rounded-md text-base font-medium hover:bg-white/70 cursor-pointer"
+                        className="flex items-center justify-between w-full text-white px-3 py-2 rounded-md text-base font-medium hover:bg-white/70 cursor-pointer"
                       >
                         {link.name}
                         <ChevronDown
@@ -165,7 +165,7 @@ const Navbar = () => {
                             <Link
                               key={item.name}
                               to={`/${item.id}/total`}
-                              className="block px-3 py-2 cursor-pointer rounded-md text-sm text-dot hover:bg-white/50"
+                              className="block px-3 py-2 cursor-pointer rounded-md text-sm text-white hover:bg-white/50"
                               onClick={() => {
                                 setIsOpen(false);
                                 closeAllDropdowns();
@@ -181,7 +181,7 @@ const Navbar = () => {
                     /* Regular mobile link */
                     <a
                       href={link.href}
-                      className="text-dot block px-3 py-2 rounded-md text-base font-medium hover:bg-white/70"
+                      className="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-white/70"
                       onClick={() => {
                         setIsOpen(false);
                         closeAllDropdowns();

@@ -4,6 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import Navbar from '../components/layout/Navbar';
 import SummaryCard from '../components/cards/SummaryCard';
 import PieChartComponent from '../components/charts/PieChartComponent';
+import Footer from '../components/layout/Footer';
 // import { educationApi } from '../services/educationApi'
 // import useApiData from '../hooks/useApiData';
 // import useFilteredData from '../hooks/useFilteredData';
@@ -309,7 +310,7 @@ const LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 py-8">
+      {/* <footer className="bg-white border-t border-gray-200 py-8">
         <div className={`max-w-6xl mx-auto px-4 text-center text-gray-600 transition-all duration-1000 delay-1000 transform ${
           isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
@@ -317,7 +318,8 @@ const LandingPage = () => {
           <p>Annual School Census 2024/2025</p>
           <p className="text-sm mt-2">Data sourced from comprehensive school census across 23 Local Government Areas</p>
         </div>
-      </footer>
+      </footer> */}
+      <Footer />
     </div>
   );
 };

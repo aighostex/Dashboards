@@ -165,7 +165,7 @@ const EnrolmentDashboard = () => {
         </>
       }
       summaryCards={
-        <DashboardGrid className='grid-cols-[200px_1fr_300px]'>
+        <DashboardGrid className='grid-cols-[200px_1fr_300px] overflow-scroll'>
           <SummaryCard
             className='border-l-4 border-b-4 border-gray-500'
             title="Number of Schools"
