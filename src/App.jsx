@@ -5,12 +5,14 @@ import EducationLevelPage from './pages/EducationLevelPage';
 import About from './pages/About';
 import Services from './pages/Services';
 import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 
 function AppContent() {
   const location = useLocation();
 
   // Hide Navbar on any "/:level/:dashboard/*" route
   const hideNavbar = /^\/[^/]+\/[^/]+/.test(location.pathname);
+  const hideFooter = /^\/[^/]+\/[^/]+/.test(location.pathname);
 
   return (
     <>
@@ -21,6 +23,7 @@ function AppContent() {
         <Route path="/services" element={<Services />} />
         <Route path="/:level/:dashboard/*" element={<EducationLevelPage />} />
       </Routes>
+      {!hideFooter && <Footer />}
     </>
   );
 }

@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import Navbar from '../components/layout/Navbar';
 import SummaryCard from '../components/cards/SummaryCard';
 import PieChartComponent from '../components/charts/PieChartComponent';
-import Footer from '../components/layout/Footer';
+
 // import { educationApi } from '../services/educationApi'
 // import useApiData from '../hooks/useApiData';
 // import useFilteredData from '../hooks/useFilteredData';
@@ -319,7 +319,6 @@ const LandingPage = () => {
           <p className="text-sm mt-2">Data sourced from comprehensive school census across 23 Local Government Areas</p>
         </div>
       </footer> */}
-      <Footer />
     </div>
   );
 };
